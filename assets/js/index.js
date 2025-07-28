@@ -1,58 +1,81 @@
-let x = 1; // колонки: 0 (лево), 1 (центр), 2 (право)
-let y = 1; // строки:   0 (верх), 1 (центр), 2 (низ)
-
+let x = 1, y = 1; // Центр
 const grid = document.querySelector('.grid');
 
 function updateView() {
   grid.style.transform = `translate(${-x * 100}vw, ${-y * 100}vh)`;
 }
 
-// Стрелки клавиатуры
+// Проверка: можно ли двигаться (только центр + 4 направления)
+function isValid(nx, ny) {
+  return (nx === 1 && ny === 1) || // центр
+         (nx === 1 && (ny === 0 || ny === 2)) || // вверх и вниз
+         (ny === 1 && (nx === 0 || nx === 2));   // влево и вправо
+}
+
+// Стрелки
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft'  && x > 0) x--;
-  if (e.key === 'ArrowRight' && x < 2) x++;
-  if (e.key === 'ArrowUp'    && y > 0) y--;
-  if (e.key === 'ArrowDown'  && y < 2) y++;
-  updateView();
+  let nx = x, ny = y;
+  if (e.key === 'ArrowLeft') nx--;
+  if (e.key === 'ArrowRight') nx++;
+  if (e.key === 'ArrowUp') ny--;
+  if (e.key === 'ArrowDown') ny++;
+
+  if (isValid(nx, ny)) {
+    x = nx;
+    y = ny;
+    updateView();
+  }
 });
 
-// Наведение мышки к краям
+// Наведение мыши на край
+let mouseCooldown = false;
+function freezeMouseMove() {
+  mouseCooldown = true;
+  setTimeout(() => mouseCooldown = false, 1000);
+}
+
 document.addEventListener('mousemove', (e) => {
-  const threshold = 30; // чувствительность краёв
+  if (mouseCooldown) return;
+
+  const threshold = 30;
   const w = window.innerWidth;
   const h = window.innerHeight;
 
-  if (e.clientX < threshold && x > 0) {
-    x--;
-    updateView();
-    freezeMouseMove();
-  } else if (e.clientX > w - threshold && x < 2) {
-    x++;
-    updateView();
-    freezeMouseMove();
-  } else if (e.clientY < threshold && y > 0) {
-    y--;
-    updateView();
-    freezeMouseMove();
-  } else if (e.clientY > h - threshold && y < 2) {
-    y++;
+  let nx = x, ny = y;
+
+  if (e.clientX < threshold) nx--;
+  else if (e.clientX > w - threshold) nx++;
+  else if (e.clientY < threshold) ny--;
+  else if (e.clientY > h - threshold) ny++;
+
+  if ((nx !== x || ny !== y) && isValid(nx, ny)) {
+    x = nx;
+    y = ny;
     updateView();
     freezeMouseMove();
   }
 });
 
-// защита от частого срабатывания при наведении
-let freeze = false;
-function freezeMouseMove() {
-  freeze = true;
-  document.removeEventListener('mousemove', onMouseMove);
-  setTimeout(() => {
-    freeze = false;
-    document.addEventListener('mousemove', onMouseMove);
-  }, 800);
-}
 
-function onMouseMove(e) {
-  if (!freeze) document.dispatchEvent(new MouseEvent('mousemove', e));
-}
-document.addEventListener('mousemove', onMouseMove);
+// Карта соответствия id экрана и координат
+const screenMap = {
+  center: { x: 1, y: 1 },
+  top:    { x: 1, y: 0 },
+  bottom: { x: 1, y: 2 },
+  left:   { x: 0, y: 1 },
+  right:  { x: 2, y: 1 }
+};
+
+// Переход по ссылкам меню
+document.querySelectorAll('.js-menu-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const target = screenMap[targetId];
+    if (target) {
+      x = target.x;
+      y = target.y;
+      updateView();
+    }
+  });
+});
