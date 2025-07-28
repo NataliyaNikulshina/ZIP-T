@@ -1,0 +1,59 @@
+html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid {
+  width: 300vw;
+  height: 300vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  transform: translate(-100vw, -100vh); /* центр */
+  transition: transform 0.6s ease;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#top {
+  grid-area: 1 / 2;
+  background: lightcoral;
+}
+#left {
+  grid-area: 2 / 1;
+  background: lightblue;
+}
+#center {
+  grid-area: 2 / 2;
+  background: white;
+}
+#right {
+  grid-area: 2 / 3;
+  background: lightgreen;
+}
+#bottom {
+  grid-area: 3 / 2;
+  background: khaki;
+}
