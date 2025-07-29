@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/center.css">
 </head>
 
 <body>
@@ -18,31 +19,35 @@
                 <span>✉ Email: office@zip-t.ru</span>
             </div>
             <span>
-                <a class="text-link" href="https://yandex.ru/maps/?rtext=~Москва, ул. Рябиновая, дом 38Б, строение 5&rtt=auto" target="_blank" rel="noopener">
-                📍 Адрес: Москва, ул. Рябиновая, дом 38Б, строение 5
+                <a class="text-link"
+                    href="https://yandex.ru/maps/?rtext=~Москва, ул. Рябиновая, дом 38Б, строение 5&rtt=auto"
+                    target="_blank" rel="noopener">
+                    📍 Адрес: Москва, ул. Рябиновая, дом 38Б, строение 5
                 </a>
             </span>
         </div>
         <div class="nav-bar page-header js-header">
-            <a class="js-menu-link active" href="#center" data-href="home"><img class="logo" src="assets/images/zip-t-logo.png" alt="logo ZIP-T"></a>
-            <button class="page-header__toggler js-menu-toggler" type="button" aria-label="Управление мобильным меню"><span>Меню</span></button>
+            <a class="js-menu-link active" href="#center" data-href="home"><img class="logo"
+                    src="assets/images/zip-t-logo.png" alt="logo ZIP-T"></a>
+            <button class="page-header__toggler js-menu-toggler" type="button"
+                aria-label="Управление мобильным меню"><span>Меню</span></button>
             <nav class="page-header__nav">
                 <div class="page-header__menu js-menu" id="menu">
                     <ul>
-                      <li>
-                        <a class="js-menu-link" href="#right" data-href="repair">Ремонт</a>
-                      </li>
-                      <li>
-                        <a class="js-menu-link" href="#top" data-href="faq">FAQ</a>
-                      </li>
-                      <li>
-                        <a class="js-menu-link" href="#left" data-href="reviews">Отзывы</a>
-                      </li>
-                      <li>
-                        <a class="js-menu-link" href="#bottom" data-href="contacts">Контакты</a>
-                      </li>
+                        <li>
+                            <a class="js-menu-link" href="#right" data-href="repair">Ремонт</a>
+                        </li>
+                        <li>
+                            <a class="js-menu-link" href="#top" data-href="faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="js-menu-link" href="#left" data-href="reviews">Отзывы</a>
+                        </li>
+                        <li>
+                            <a class="js-menu-link" href="#bottom" data-href="contacts">Контакты</a>
+                        </li>
                     </ul>
-                  </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -50,14 +55,50 @@
     <main>
         <div class="viewport">
             <div class="grid">
-                <section class="screen" id="top">Вверх</section>
-                <section class="screen" id="left">Влево</section>
-                <section class="screen" id="center">Главная</section>
-                <section class="screen" id="right">Вправо</section>
-                <section class="screen" id="bottom">Вниз</section>
+                <section class="screen" id="top">Вверх FAQ</section>
+                <section class="screen" id="left">Влево Отзывы</section>
+                <section class="screen" id="center">
+                    <div>
+                        <div class="intro">
+                            <div class="images">
+                                <img src="assets/images/car-lift.jpg" alt="Ремонт машины" class="left-img">
+                                <img src="assets/images/engine.jpg" alt="Двигатель" class="small-img">
+                            </div>
+                            <div class="text-block">
+                                <button class="button-round"><strong>ПОЗВОНИ</strong>
+                                    и мы поможем</button>
+                                <h1>Автосервис в Москве:<br>ремонт и обслуживание лучших немецких брендов</h1>
+                                <p>Эта известная в городе автомастерская обладает самым современным оборудованием. Мы
+                                    предлагаем вам не
+                                    только профессиональный ремонт и техническое обслуживание, но и детальную
+                                    диагностику вашего
+                                    автомобиля. Воспользуйтесь нашим многолетним опытом и мы быстро приведем вашу машину
+                                    в рабочее
+                                    состояние, получите полезные советы от команды мастеров.</p>
+                            </div>
+                            <div class="round"></div>
+                        </div>
+                        <div class="brands">
+                            <div class="brand-item">
+                                <img src="assets/images/porche.png" alt="Porsche Cayenne">
+                            </div>
+                            <div class="brand-item">
+                                <img src="assets/images/multivan.png" alt="Volkswagen Multivan">
+                            </div>
+                            <div class="brand-item">
+                                <img src="assets/images/touareg.png" alt="Volkswagen Touareg">
+                            </div>
+                            <div class="brand-item">
+                                <img src="assets/images/tiguan.png" alt="Volkswagen Tiguan">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="screen" id="right">Вправо Ремонт</section>
+                <section class="screen" id="bottom">Вниз Контакты</section>
             </div>
         </div>
-          
+
         <!-- <section class="intro">
             <div class="images">
                 <img src="assets/images/car-lift.jpg" alt="Ремонт машины" class="left-img">
@@ -137,8 +178,8 @@
             <img class="footer-logo" src="assets/images/zip-t-logo-light.png" alt="logo ZIP-T White">
         </div>
     </footer> -->
-    <script src="assets/js/fullScroll.js"></script>
-    <script src="assets/js/menu.js"></script>
+        <script src="assets/js/fullScroll.js"></script>
+        <script src="assets/js/menu.js"></script>
 </body>
 
 </html>

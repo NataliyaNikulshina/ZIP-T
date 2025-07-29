@@ -1,8 +1,10 @@
 let x = 1, y = 1; // Центр
 const grid = document.querySelector('.grid');
 
+// Обновление вида и активной ссылки
 function updateView() {
   grid.style.transform = `translate(${-x * 100}vw, ${-y * 100}vh)`;
+  updateActiveLink();
 }
 
 // Проверка: можно ли двигаться (только центр + 4 направления)
@@ -12,7 +14,32 @@ function isValid(nx, ny) {
          (ny === 1 && (nx === 0 || nx === 2));   // влево и вправо
 }
 
-// Стрелки
+// Обновление активной ссылки в меню
+function updateActiveLink() {
+  const screenCoordsMap = {
+    'center': { x: 1, y: 1 },
+    'top':    { x: 1, y: 0 },
+    'bottom': { x: 1, y: 2 },
+    'left':   { x: 0, y: 1 },
+    'right':  { x: 2, y: 1 }
+  };
+
+  let currentId = null;
+
+  for (const [key, value] of Object.entries(screenCoordsMap)) {
+    if (value.x === x && value.y === y) {
+      currentId = key;
+      break;
+    }
+  }
+
+  document.querySelectorAll('.js-menu-link').forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    link.classList.toggle('active', targetId === currentId);
+  });
+}
+
+// Стрелки клавиатуры
 document.addEventListener('keydown', (e) => {
   let nx = x, ny = y;
   if (e.key === 'ArrowLeft') nx--;
@@ -46,7 +73,6 @@ document.addEventListener('mousemove', (e) => {
   if (e.clientX < threshold) nx--;
   else if (e.clientX > w - threshold) nx++;
   else if (e.clientY < threshold) ny--;
-  // else if (e.clientY >= 130 && e.clientY < 130 + threshold) ny--;
   else if (e.clientY > h - threshold) ny++;
 
   if ((nx !== x || ny !== y) && isValid(nx, ny)) {
@@ -57,8 +83,7 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
-
-// Карта соответствия id экрана и координат
+// Карта координат
 const screenMap = {
   center: { x: 1, y: 1 },
   top:    { x: 1, y: 0 },
@@ -81,13 +106,12 @@ document.querySelectorAll('.js-menu-link').forEach(link => {
   });
 });
 
-
-// Мобильная версия
+// Мобильный свайп
 let touchStartX = 0;
 let touchStartY = 0;
 let touchEndX = 0;
 let touchEndY = 0;
-const swipeThreshold = 50; // Минимальное расстояние для свайпа
+const swipeThreshold = 50;
 
 document.addEventListener('touchstart', (e) => {
   touchStartX = e.changedTouches[0].clientX;
@@ -105,13 +129,11 @@ document.addEventListener('touchend', (e) => {
   let ny = y;
 
   if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > swipeThreshold) {
-    // Горизонтальный свайп
-    if (dx < 0) nx++; // свайп влево — переход вправо
-    else nx--;        // свайп вправо — переход влево
+    if (dx < 0) nx++; // свайп влево — вправо
+    else nx--;        // свайп вправо — влево
   } else if (Math.abs(dy) > swipeThreshold) {
-    // Вертикальный свайп
-    if (dy < 0) ny++; // свайп вверх — переход вниз
-    else ny--;        // свайп вниз — переход вверх
+    if (dy < 0) ny++; // свайп вверх — вниз
+    else ny--;        // свайп вниз — вверх
   }
 
   if (isValid(nx, ny)) {

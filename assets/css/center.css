@@ -1,0 +1,111 @@
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 40px 0;
+  background: white;
+  position: relative;
+  padding-left: 120px;
+  gap: 70px;
+}
+
+.images {
+  position: relative;
+}
+
+.left-img {
+  width: 300px;
+  border-radius: 50%;
+  border: 10px solid #026a63;
+}
+
+.small-img {
+  position: absolute;
+  bottom: -20px;
+  left: 200px;
+  width: 150px;
+  border-radius: 50%;
+  border: 8px solid #f9b17a;
+}
+
+.text-block {
+  max-width: 600px;
+}
+
+/* .text-block button {
+    background-color: #026a63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 20px;
+} */
+
+.text-block h1 {
+  color: #003d36;
+  font-size: 24px;
+}
+
+.text-block p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.text-link {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: all 0.1s linear;
+  border-radius: 12px;
+}
+
+.brands {
+  background-color: #026a63;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+  padding: 5px;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  margin-left: 184px;
+  position: relative;
+  top: -168px;
+  right: 0px;
+}
+
+.brand-item img {
+  height: 140px;
+}
+
+.round {
+  width: 350px;
+  height: 600px;
+  background-color: #026a63;
+  position: relative;
+  /* top: 168px;
+    right: 0px; */
+  border-top-left-radius: 600px;
+  border-bottom-left-radius: 600px;
+}
+
+.button-round {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  background-color: #026a63;
+  color: white;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: pre-line;
+  cursor: pointer;
+}
+
+.button-round:hover {
+  background-color: #03877c;
+}

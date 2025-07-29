@@ -1,11 +1,11 @@
 .header {
   margin: 0 auto;
   max-width: 100%;
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10; */
+  z-index: 10;
 }
 
 .top-bar {
@@ -33,7 +33,7 @@
 }
 
 .nav-bar {
-  background-color: white;
+  /* background-color: white; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,10 +42,10 @@
   /* margin: 0 auto;
       max-width: 1280px; */
 }
-
+/* 
 .nav-bar .logo img {
   height: 50px;
-}
+} */
 
 .nav-bar nav a {
   margin: 0 10px;
@@ -56,6 +56,10 @@
 
 .logo {
   width: 200px;
+}
+
+.js-menu-link {
+  z-index: 11;
 }
 
 .text-link {
@@ -88,7 +92,7 @@
   display: flex;
   align-items: center;
   opacity: 1;
-  transition: opacity var(--ease-custom-bezier) 0.6s;
+  transition: opacity var(--ease-custom-bezier) 0.6s, transform var(--time-animation-m) linear;
   transition-delay: var(--time-animation-xs);
 }
 
@@ -232,11 +236,16 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: var(--c-light);
+  background-color: var(--c-dark);
   display: block;
   right: 0;
-  transition: width var(--time-animation-m) linear,
-    background-color var(--time-animation-m) linear;
+  transition: width var(--time-animation-m) linear, background-color var(--time-animation-m) linear;
+}
+
+a.active::after {
+  width: 100%;
+  left: 0;
+  visibility: visible;
 }
 
 @media (max-width: 1024px) and (orientation: portrait) {
@@ -269,7 +278,6 @@
   background-color: var(--c-normal);
 }
 
-
 .page-header__toggler {
   padding: 0;
   margin: 0;
@@ -282,7 +290,7 @@
   width: 2.5rem;
   height: 2.5rem;
   font-size: 0;
-  background-color: var(--c-yellow);
+  background-color: var(--c-light);
   border-radius: 50%;
   z-index: 1;
 }
