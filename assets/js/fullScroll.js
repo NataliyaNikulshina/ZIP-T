@@ -46,6 +46,7 @@ document.addEventListener('mousemove', (e) => {
   if (e.clientX < threshold) nx--;
   else if (e.clientX > w - threshold) nx++;
   else if (e.clientY < threshold) ny--;
+  // else if (e.clientY >= 130 && e.clientY < 130 + threshold) ny--;
   else if (e.clientY > h - threshold) ny++;
 
   if ((nx !== x || ny !== y) && isValid(nx, ny)) {
@@ -78,4 +79,44 @@ document.querySelectorAll('.js-menu-link').forEach(link => {
       updateView();
     }
   });
+});
+
+
+// Мобильная версия
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+const swipeThreshold = 50; // Минимальное расстояние для свайпа
+
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].clientX;
+  touchStartY = e.changedTouches[0].clientY;
+});
+
+document.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  touchEndY = e.changedTouches[0].clientY;
+
+  const dx = touchEndX - touchStartX;
+  const dy = touchEndY - touchStartY;
+
+  let nx = x;
+  let ny = y;
+
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > swipeThreshold) {
+    // Горизонтальный свайп
+    if (dx < 0) nx++; // свайп влево — переход вправо
+    else nx--;        // свайп вправо — переход влево
+  } else if (Math.abs(dy) > swipeThreshold) {
+    // Вертикальный свайп
+    if (dy < 0) ny++; // свайп вверх — переход вниз
+    else ny--;        // свайп вниз — переход вверх
+  }
+
+  if (isValid(nx, ny)) {
+    x = nx;
+    y = ny;
+    updateView();
+  }
 });
