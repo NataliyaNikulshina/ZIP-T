@@ -342,3 +342,30 @@ a.active::after {
 .page-header--menu-opened .page-header__toggler::after {
   transform: translate(-50%) rotate(-45deg);
 }
+
+
+.clickable-contact {
+  color: inherit; /* Сохраняет цвет родительского элемента */
+  text-decoration: none; /* Убирает подчеркивание */
+  margin-right: 15px; /* Отступ между элементами */
+  transition: color 0.3s ease; /* Плавное изменение цвета */
+  display: inline-block; /* Для правильных отступов */
+  font-size: 2vmin;
+}
+
+.clickable-contact:hover {
+  color: var(--c-yellow); /* Цвет при наведении (как в вашем дизайне) */
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .top-bar-left {
+      display: flex;
+      flex-direction: column;
+  }
+  .clickable-contact {
+      margin-right: 0;
+      margin-bottom: 8px;
+  }
+}

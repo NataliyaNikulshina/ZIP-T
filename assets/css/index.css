@@ -43,4 +43,4 @@ background: #fff;
 #left   { top: 100vh;  left: 0;      background: lightblue; }
 #center { top: 100vh;  left: 100vw;  background: white; }
 #right  { top: 100vh;  left: 200vw;  background: lightgreen; }
-#bottom { top: 200vh;  left: 100vw;  background: khaki; }
+#bottom { top: 200vh;  left: 100vw;  background: white; }

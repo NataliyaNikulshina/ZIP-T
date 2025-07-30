@@ -1,65 +1,50 @@
-.intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  padding: 40px 0;
-  background: white;
+section {
+  min-height: 100vh;
+  width: 100vw;
   position: relative;
-  padding-left: 120px;
-  gap: 70px;
+  overflow: hidden;
+}
+
+.intro {
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 5vh 5vw;
+  background: white;
+  /* position: relative;
+  min-height: 90vh; */
+  box-sizing: border-box;
+  gap: 5vw;
 }
 
 .images {
   position: relative;
+  flex: 0 0 auto;
 }
 
 .left-img {
-  width: 300px;
+  width: 35vmin;
+  max-width: 300px;
   border-radius: 50%;
-  border: 10px solid #026a63;
+  border: 1vmin solid #026a63;
 }
 
 .small-img {
   position: absolute;
-  bottom: -20px;
-  left: 200px;
-  width: 150px;
+  bottom: -2vmin;
+  left: 22vmin;
+  width: 20vmin;
+  max-width: 150px;
   border-radius: 50%;
-  border: 8px solid #f9b17a;
+  border: 0.8vmin solid #f9b17a;
 }
 
 .text-block {
-  max-width: 600px;
-}
-
-/* .text-block button {
-    background-color: #026a63;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-bottom: 20px;
-} */
-
-.text-block h1 {
-  color: #003d36;
-  font-size: 24px;
-}
-
-.text-block p {
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-}
-
-.text-link {
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.6;
-  text-decoration: none;
-  transition: all 0.1s linear;
-  border-radius: 12px;
+  flex: 1;
+  z-index: 2;
+  font-size: 2.5vmin;
 }
 
 .brands {
@@ -67,45 +52,75 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 44px;
-  padding: 5px;
-  border-top-left-radius: 70px;
-  border-bottom-left-radius: 70px;
-  margin-left: 184px;
-  position: relative;
-  top: -168px;
-  right: 0px;
+  gap: 3vw;
+  padding: 1vh 0;
+  border-radius: 70px 0 0 70px;
+  position: absolute;
+  bottom: 5vh;
+  right: 0;
+  width: 80%;
 }
 
 .brand-item img {
-  height: 140px;
+  height: 10vmin;
+  max-height: 140px;
 }
 
 .round {
-  width: 350px;
-  height: 600px;
+  width: 80vh;
+  height: 80vh;
   background-color: #026a63;
-  position: relative;
-  /* top: 168px;
-    right: 0px; */
-  border-top-left-radius: 600px;
-  border-bottom-left-radius: 600px;
+  position: absolute;
+  right: -60vh;
+  top: 10vh;
+  border-radius: 50vh;
+  z-index: 1;
 }
 
 .button-round {
-  width: 150px;
-  height: 150px;
-  border-radius: 100px;
+  width: 15vmin;
+  height: 15vmin;
+  min-width: 150px;
+  min-height: 150px;
+  border-radius: 50%;
   background-color: #026a63;
   color: white;
   border: none;
-  font-size: 16px;
+  font-size: 2vmin;
   line-height: 1.5;
-  text-align: center;
-  white-space: pre-line;
   cursor: pointer;
+  /* position: relative; */
+  position: flex;
+  z-index: 3;
 }
 
 .button-round:hover {
   background-color: #03877c;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    padding: 20vh 5vw;
+  }
+  
+  .brands {
+    position: static;
+    width: 100%;
+    border-radius: 10%;
+  }
+
+  .text-block {
+    font-size: 1vmin;
+  }
+  
+  .round {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .text-block {
+    font-size: 2vmin;
+  }
 }

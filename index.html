@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/center.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 
 <body>
     <header class="header">
         <div class="top-bar">
             <div class="top-bar-left">
-                <span>☎ Телефон: (495)961-63-75</span>
-                <span>✉ Email: office@zip-t.ru</span>
+                <a href="tel:+74959616375" class="clickable-contact">☎ Телефон: (495)961-63-75</a>
+    <a href="mailto:office@zip-t.ru" class="clickable-contact">✉ Email: office@zip-t.ru</a>
             </div>
             <span>
-                <a class="text-link"
+                <a class="clickable-contact"
                     href="https://yandex.ru/maps/?rtext=~Москва, ул. Рябиновая, дом 38Б, строение 5&rtt=auto"
                     target="_blank" rel="noopener">
                     📍 Адрес: Москва, ул. Рябиновая, дом 38Б, строение 5
@@ -61,8 +62,8 @@
                     <div>
                         <div class="intro">
                             <div class="images">
-                                <img src="assets/images/car-lift.jpg" alt="Ремонт машины" class="left-img">
-                                <img src="assets/images/engine.jpg" alt="Двигатель" class="small-img">
+                                <img src="assets/images/car-lift.jpg" alt="Ремонт машины фото" class="left-img">
+                                <img src="assets/images/engine.jpg" alt="Двигатель фото" class="small-img">
                             </div>
                             <div class="text-block">
                                 <button class="button-round"><strong>ПОЗВОНИ</strong>
@@ -95,89 +96,46 @@
                     </div>
                 </section>
                 <section class="screen" id="right">Вправо Ремонт</section>
-                <section class="screen" id="bottom">Вниз Контакты</section>
+                <section class="screen" id="bottom">
+                    <footer>
+                        <div class="footer-top">
+                            <div class="footer-contact">
+                                <span class="icon">✉️</span>
+                                <span>Email: office@zip-t.ru</span>
+                            </div>
+                            <div class="footer-hours">
+                                <span class="icon">⏰</span>
+                                <span>8:00 – 19:00</span>
+                            </div>
+                            <div class="footer-phone">
+                                <span class="icon">📞</span>
+                                <span>Телефон: (495) 961–63–75</span>
+                            </div>
+                        </div>
+                
+                        <div class="footer-middle">
+                            <img src="assets/images/map-techcenter.png" alt="Как проехать">
+                            <div class="column">
+                                <h4>Сервис</h4>
+                                <ul>
+                                    <li>Ремонт выхлопной системы</li>
+                                    <li>Ремонт тормозной системы</li>
+                                    <li>Ремонт КПП и АКПП</li>
+                                    <li>Ремонт двигателя</li>
+                                    <li>Ремонт ходовой части</li>
+                                    <li>Ремонт автоэлектрики</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="footer-bottom">
+                            <p>Copyright © 2025 Zip-t, All Rights Reserved</p>
+                            <img class="footer-logo" src="assets/images/zip-t-logo-light.png" alt="logo ZIP-T White">
+                        </div>
+                    </footer> 
+                </section>
             </div>
         </div>
-
-        <!-- <section class="intro">
-            <div class="images">
-                <img src="assets/images/car-lift.jpg" alt="Ремонт машины" class="left-img">
-                <img src="assets/images/engine.jpg" alt="Двигатель" class="small-img">
-            </div>
-            <div class="text-block">
-                <button class="button-round"><strong>ПОЗВОНИ</strong>
-                    и мы поможем</button>
-                <h1>Автосервис в Москве:<br>ремонт и обслуживание лучших немецких брендов</h1>
-                <p>Эта известная в городе автомастерская обладает самым современным оборудованием. Мы предлагаем вам не
-                    только профессиональный ремонт и техническое обслуживание, но и детальную диагностику вашего
-                    автомобиля. Воспользуйтесь нашим многолетним опытом и мы быстро приведем вашу машину в рабочее
-                    состояние, получите полезные советы от команды мастеров.</p>
-            </div>
-            <div class="round"></div>
-        </section>
-
-        <section class="brands">
-            <div class="brand-item">
-                <img src="assets/images/porche.png" alt="Porsche Cayenne">
-            </div>
-            <div class="brand-item">
-                <img src="assets/images/multivan.png" alt="Volkswagen Multivan">
-            </div>
-            <div class="brand-item">
-                <img src="assets/images/touareg.png" alt="Volkswagen Touareg">
-            </div>
-            <div class="brand-item">
-                <img src="assets/images/tiguan.png" alt="Volkswagen Tiguan">
-            </div>
-        </section>
-        <section></section>
-    </main>
-    <footer>
-        <div class="footer-top">
-            <div class="footer-contact">
-                <span class="icon">✉️</span>
-                <span>Email: office@zip-t.ru</span>
-            </div>
-            <div class="footer-hours">
-                <span class="icon">⏰</span>
-                <span>8:00 – 19:00</span>
-            </div>
-            <div class="footer-phone">
-                <span class="icon">📞</span>
-                <span>Телефон: (495) 961–63–75</span>
-            </div>
-        </div>
-
-        <div class="footer-middle">
-            <div class="column">
-                <h4>Сервис</h4>
-                <ul>
-                    <li>Ремонт выхлопной системы</li>
-                    <li>Ремонт тормозной системы</li>
-                    <li>Ремонт КПП и АКПП</li>
-                    <li>Ремонт двигателя</li>
-                    <li>Ремонт ходовой части</li>
-                    <li>Ремонт автоэлектрики</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h4>Меню</h4>
-                <ul>
-                    <li>О компании Zip-t</li>
-                    <li>Вопросы и ответы</li>
-                    <li>Как проехать</li>
-                    <li>Зона ремонта и приёмка</li>
-                    <li>Благодарности</li>
-                    <li>Ремонт автоэлектрики</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>Copyright © 2025 Zip-t, All Rights Reserved</p>
-            <img class="footer-logo" src="assets/images/zip-t-logo-light.png" alt="logo ZIP-T White">
-        </div>
-    </footer> -->
         <script src="assets/js/fullScroll.js"></script>
         <script src="assets/js/menu.js"></script>
 </body>
