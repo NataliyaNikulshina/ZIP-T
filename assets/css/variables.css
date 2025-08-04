@@ -27,4 +27,6 @@
     --time-animation-m: .5s;
     --time-animation-l: 1s;
     --time-animation-xl: 1.5s;
+
+    --l-box-shadow: 0 12px 24px 0 rgba(21, 18, 51, 0.2); 
 }
