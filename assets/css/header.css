@@ -1,3 +1,4 @@
+/* Общие стили */
 .header {
   margin: 0 auto;
   max-width: 100%;
@@ -14,16 +15,16 @@
   font-size: 14px;
   display: flex;
   justify-content: space-between;
-  gap: 24px;
   align-items: center;
-  padding-right: 120px;
+  gap: 24px;
+  padding: 0 120px 0 0;
 }
 
 .top-bar-left {
   background-color: #23322d;
   color: white;
   font-size: 14px;
-  padding: 10px 120px 10px 120px;
+  padding: 10px 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,9 +42,8 @@
     to bottom,
     rgba(255, 255, 255, 1) 0%, 
     rgba(255, 255, 255, 0.8) 50%, 
-    rgba(255, 255, 255, 0) 100% 
+    rgba(255, 255, 255, 0) 100%
   );
-
 }
 
 .nav-bar nav a {
@@ -57,84 +57,29 @@
   width: 200px;
 }
 
-.js-menu-link {
-  z-index: 11;
-}
-
-.text-link {
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.6;
+/* Ссылки */
+.clickable-contact {
+  color: inherit;
   text-decoration: none;
-  transition: all 0.1s linear;
-  border-radius: 12px;
-  
+  margin-right: 15px;
+  transition: color 0.3s ease;
+  display: inline-block;
+  font-size: 2vmin;
 }
 
-@media (max-width: 1024px) {
-  .top-bar {
-    padding: 0;
-    padding-right: 20px;
-  }
-  .top-bar-left {
-    padding: 10px 20px;
-  }
-  .nav-bar {
-    padding: 10px 20px;
-  }
-  .intro {
-    padding-left: 20px;
-  }
+.clickable-contact:hover {
+  color: var(--c-yellow);
+  text-decoration: underline;
 }
 
+/* Меню */
 .page-header__nav {
   display: flex;
   align-items: center;
   opacity: 1;
-  transition: opacity var(--ease-custom-bezier) 0.6s, transform var(--time-animation-m) linear;
+  transition: opacity var(--ease-custom-bezier) 0.6s,
+              transform var(--time-animation-m) linear;
   transition-delay: var(--time-animation-xs);
-}
-
-@media (max-width: 1024px) and (orientation: portrait) {
-  .page-header__nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: translateX(-100%);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 4rem 3.5rem;
-    color: var(--c-dark);
-    background-color: var(--c-light);
-  }
-
-  .page-header--menu-opened .page-header__nav {
-    transform: translateX(0);
-  }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-  .page-header__nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: translateX(-100%);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem 3.5rem;
-    max-height: calc(var(--vh, 1vh) * 100);
-    color: var(--c-dark);
-    background-color: var(--c-light);
-    overflow-y: auto;
-  }
-
-  .page-header--menu-opened .page-header__nav {
-    transform: translateX(0);
-  }
 }
 
 .page-header__menu {
@@ -146,80 +91,16 @@
   color: var(--c-light);
 }
 
-@media (min-width: 2000px) {
-  .page-header__menu {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 1024px) and (orientation: portrait) {
-  .page-header__menu {
-    margin: auto 0;
-    font-size: 2.4rem;
-    color: var(--c-dark);
-  }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-  .page-header__menu {
-    margin: auto 0;
-    font-size: 1.4rem;
-    color: var(--c-dark);
-  }
-}
-
 .page-header__menu ul {
+  list-style: none;
   padding: 0;
   margin: 0;
-  list-style: none;
   display: flex;
   align-items: center;
 }
 
-@media (max-width: 1024px) and (orientation: portrait) {
-  .page-header__menu ul {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 3.8rem;
-  }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-  .page-header__menu ul {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 2rem;
-  }
-}
-
 .page-header__menu li {
   margin-left: 4rem;
-}
-
-@media (min-width: 2000px) {
-  .page-header__menu li {
-    margin-left: 40px;
-  }
-}
-
-@media (max-width: 1024px) and (orientation: portrait) {
-  .page-header__menu li {
-    margin: 0 0 2.5rem;
-  }
-
-  .page-header__menu li:last-child {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 1024px) and (orientation: landscape) {
-  .page-header__menu li {
-    margin: 0 0 1.5rem;
-  }
-
-  .page-header__menu li:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .page-header__menu a {
@@ -236,75 +117,44 @@
   width: 0;
   height: 2px;
   background-color: var(--c-dark);
-  display: block;
   right: 0;
-  transition: width var(--time-animation-m) linear, background-color var(--time-animation-m) linear;
+  transition: width var(--time-animation-m) linear,
+              background-color var(--time-animation-m) linear;
 }
 
 a.active::after {
   width: 100%;
   left: 0;
-  visibility: visible;
-}
-
-@media (max-width: 1024px) and (orientation: portrait) {
-  .page-header__menu a::after {
-    left: 0;
-    right: 0;
-    background-color: var(--c-dark);
-  }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-  .page-header__menu a::after {
-    left: 0;
-    right: 0;
-    background-color: var(--c-dark);
-  }
 }
 
 .page-header__menu a:hover,
 .page-header__menu a:focus {
   color: var(--c-normal);
-  outline: none;
 }
 
 .page-header__menu a:hover::after,
 .page-header__menu a:focus::after {
   width: 100%;
   left: 0;
-  opacity: 1;
   background-color: var(--c-normal);
 }
 
+/* Тогглер */
 .page-header__toggler {
+  display: none;
   padding: 0;
   margin: 0;
-  background: none;
-  border: none;
+  background: none; 
+  border: none; 
   cursor: pointer;
-  outline: none;
-  position: relative;
-  display: none;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 0;
-  background-color: var(--c-light);
-  border-radius: 50%;
+  outline: none; 
+  position: relative; 
+  width: 2.5rem; 
+  height: 2.5rem; 
+  font-size: 0; 
+  background-color: var(--c-light); 
+  border-radius: 50%; 
   z-index: 1;
-}
-
-/* Медиа-запросы вынесены отдельно */
-@media (max-width: 1024px) and (orientation: portrait) {
-  .page-header__toggler {
-    display: block;
-  }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-  .page-header__toggler {
-    display: block;
-  }
 }
 
 .page-header__toggler::before,
@@ -327,7 +177,6 @@ a.active::after {
   width: 0.7rem;
 }
 
-/* Стили для кнопки при открытом меню */
 .page-header--menu-opened .page-header__toggler::before,
 .page-header--menu-opened .page-header__toggler::after {
   top: 50%;
@@ -342,29 +191,65 @@ a.active::after {
   transform: translate(-50%) rotate(-45deg);
 }
 
-
-.clickable-contact {
-  color: inherit; /* Сохраняет цвет родительского элемента */
-  text-decoration: none; /* Убирает подчеркивание */
-  margin-right: 15px; /* Отступ между элементами */
-  transition: color 0.3s ease; /* Плавное изменение цвета */
-  display: inline-block; /* Для правильных отступов */
-  font-size: 2vmin;
+/* Медиа-запросы */
+/* Для очень больших экранов */
+@media (min-width: 2000px) {
+  .page-header__menu { font-size: 12px; }
+  .page-header__menu li { margin-left: 40px; }
 }
 
-.clickable-contact:hover {
-  color: var(--c-yellow); /* Цвет при наведении (как в вашем дизайне) */
-  text-decoration: underline; /* Подчеркивание при наведении */
+@media (max-width: 1166px) {
+  .top-bar { padding: 0 20px 0 0; }
+  .top-bar-left { padding: 10px 20px; }
+  .nav-bar { padding: 10px 20px; }
+  .intro { padding-left: 20px; }
+  .page-header__toggler { display: block; }
+  .page-header__nav {
+    position: fixed;
+    inset: 0;
+    transform: translateX(-100%);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem 3.5rem;
+    background-color: var(--c-light);
+    color: var(--c-dark);
+  }
+  .page-header--menu-opened .page-header__nav { transform: translateX(0); }
+  .page-header__menu {
+    margin: auto 0;
+    font-size: 2.4rem;
+    color: var(--c-dark);
+  }
+  .page-header__menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 3.8rem;
+  }
+  .page-header__menu li {
+    margin: 0 0 2.5rem;
+  }
 }
 
-/* Для мобильных устройств */
 @media (max-width: 768px) {
+  .page-header__nav {
+    padding: 2rem 3.5rem;
+    overflow-y: auto;
+  }
+  .page-header__menu {
+    font-size: 1.4rem;
+  }
+  .page-header__menu ul {
+    padding-top: 2rem;
+  }
+  .page-header__menu li {
+    margin: 0 0 1.5rem;
+  }
   .top-bar-left {
-      display: flex;
-      flex-direction: column;
+    flex-direction: column;
+    min-width: 160px;
   }
   .clickable-contact {
-      margin-right: 0;
-      margin-bottom: 8px;
+    margin: 0 0 8px;
+    font-size: 12px;
   }
 }

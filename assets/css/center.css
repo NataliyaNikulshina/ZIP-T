@@ -1,8 +1,4 @@
 section {
-  /* min-height: 100vh;
-  width: 100vw;
-  position: relative;
-  overflow: hidden; */
   min-height: 100vh;
   width: 100%;
   position: relative;
@@ -109,6 +105,18 @@ section {
   right: 20px;
   transform: scale(0.7);
   box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 7px 15px rgba(0,0,0,0.3);
+  display: inline-block;
+  font-size: 0; 
+}
+
+.button-round.fixed::before {
+  content: "";
+  background: url("../images/phone.png") no-repeat center/contain;
+  display: block;
+  width: 80px;   
+  height: 80px;  
+  margin: 0 auto;
+  color: #fff;
 }
 
 .button-round:hover {
@@ -146,4 +154,9 @@ section {
     margin-left: 100px;
     padding: 10px 0 10px 100px;
   }
+
+  .button-round {
+    font-size: 14px;
+  }
+
 }

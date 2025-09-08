@@ -25,7 +25,6 @@ footer {
 }
 
 .icon {
-  /* width: 25px; */
   height: 14px;
   padding: 5px 10px;
 }
@@ -87,7 +86,6 @@ footer {
 }
 
 .map {
-  /* box-shadow: var(--l-box-shadow); */
   border-radius: 18px;
   position: relative;
 }
@@ -106,6 +104,7 @@ footer {
   padding: 40px;
   border-radius: 18px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 7px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
 }
 
 .map-container p {
@@ -136,6 +135,11 @@ p {
   font-size: 18px;
 }
 
+.map-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .map-brands {
   padding-top: 5px;
   display: flex;
@@ -146,10 +150,7 @@ p {
   .map-container {
     flex-direction: row;
     align-items: flex-start;
-  }
-
-  .map-flex {
-    display: flex;
+    max-width: 1024px;
   }
 
   .footer-bottom {
@@ -179,4 +180,37 @@ p {
 
 @media (max-width: 768px) {
 
+}
+
+@media (max-width: 512px) {
+  .footer-top {
+    border-radius: 0; /* убрать скругление, если оно мешает */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .map-flex {
+    display: inline;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+  }
+
+  .footer-middle .column {
+    width: 100%; /* каждая колонка занимает всю ширину */
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .map-container {
+    /* width: 100%; */
+    left: 0;
+    padding: 20px;
+  }
 }
