@@ -1,22 +1,28 @@
 section {
-  min-height: 100vh;
+  /* min-height: 100vh;
   width: 100vw;
   position: relative;
+  overflow: hidden; */
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .intro {
-  height: 80vh;
-  width: 80vw;
+  width: 100%;
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 5vh 5vw;
+  padding: 100px 0 0 50px;
   background: white;
-  /* position: relative;
-  min-height: 90vh; */
+  position: relative;
   box-sizing: border-box;
-  gap: 5vw;
+  gap: 5vw; 
 }
 
 .images {
@@ -50,15 +56,16 @@ section {
 .brands {
   background-color: #026a63;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 3vw;
-  padding: 1vh 0;
+  padding: 10px 0 10px 200px;
   border-radius: 70px 0 0 70px;
-  position: absolute;
+  /* position: absolute; */
   bottom: 5vh;
   right: 0;
-  width: 80%;
+  width: 100%;
+  margin-left: 400px;
 }
 
 .brand-item img {
@@ -67,13 +74,14 @@ section {
 }
 
 .round {
-  width: 80vh;
-  height: 80vh;
+  width: 30vh;
+  height: 60vh;
   background-color: #026a63;
-  position: absolute;
-  right: -60vh;
-  top: 10vh;
-  border-radius: 50vh;
+  position: relative;
+  /* right: -10vh; */
+  top: 15vh;
+  /* border-radius: 50vh; */
+  border-radius: 50vh 0 0 50vh;
   z-index: 1;
 }
 
@@ -89,32 +97,53 @@ section {
   font-size: 2vmin;
   line-height: 1.5;
   cursor: pointer;
-  /* position: relative; */
-  position: flex;
-  z-index: 3;
+  position: relative;
+  z-index: 999;
+  transition: all 0.6s ease-in-out;
+  transform: translate(0, 0) scale(1);
+}
+
+.button-round.fixed {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  transform: scale(0.7);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 7px 15px rgba(0,0,0,0.3);
 }
 
 .button-round:hover {
   background-color: #03877c;
+  transform: scale(0.9);
+}
+
+@media (max-width: 1024px) {
+  .text-block {
+    font-size: 22px;
+  }
+
+  .brands {
+    margin-left: 200px;
+  }
 }
 
 @media (max-width: 768px) {
   .intro {
     flex-direction: column;
-    padding: 20vh 5vw;
+    padding: 200px 0 0 0;
   }
 
   .text-block {
-    font-size: 1vmin;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   
   .round {
     display: none;
   }
-}
 
-@media (max-width: 1024px) {
-  .text-block {
-    font-size: 2vmin;
+  .brands {
+    margin-left: 100px;
+    padding: 10px 0 10px 100px;
   }
 }

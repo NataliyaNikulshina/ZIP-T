@@ -1,7 +1,8 @@
 html {
   margin: 0;
-  height: 100%;
-  overflow: hidden;
+  /* height: 100%; */
+  height: auto;   
+  overflow-x: hidden;
 }
 
 body {
@@ -12,35 +13,24 @@ background: #fff;
 }
 
 .viewport {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+  width: auto;
+  height: auto;
+  position: static;
+  transform: none;
 }
 
 .grid {
-  width: 300vw;
-  height: 300vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-100vw, -100vh); /* Старт с центра */
-  transition: transform 0.7s ease;
+  width: auto;
+  height: auto;
+  position: static;
+  transform: none;
 }
 
 .screen {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
 }
-
-/* Расположение */
-#top    { top: 0;      left: 100vw; background: lightcoral; }
-#left   { top: 100vh;  left: 0;      background: lightblue; }
-#center { top: 100vh;  left: 100vw;  background: white; }
-#right  { top: 100vh;  left: 200vw;  background: lightgreen; }
-#bottom { top: 200vh;  left: 100vw;  background: white; }

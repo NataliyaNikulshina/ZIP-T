@@ -3,13 +3,7 @@ footer {
   color: white;
   font-family: sans-serif;
   padding: 30px 20px;
-  height: 80vh;
-  width: 100vw;
-  margin: auto 0;
   box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
 
 .footer-top {
@@ -31,8 +25,8 @@ footer {
 }
 
 .icon {
-  width: 25px;
-  height: 28px;
+  /* width: 25px; */
+  height: 14px;
   padding: 5px 10px;
 }
 
@@ -88,17 +82,19 @@ footer {
   width: 100px;
 }
 
+.footer-hours {
+  padding-bottom: 10px;
+}
+
 .map {
-  box-shadow: var(--l-box-shadow);
+  /* box-shadow: var(--l-box-shadow); */
   border-radius: 18px;
   position: relative;
-  padding: 15px;
-  width: 100vw;
 }
 
 .map-image {
   border-radius: 18px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .map-container {
@@ -109,58 +105,78 @@ footer {
   top: 10vh;
   padding: 40px;
   border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 7px 15px rgba(0, 0, 0, 0.3);
 }
 
-.map-container p, h2, h3 {
+.map-container p {
   margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  height: 20px;
 }
 
-.map-container h2, h3 {
+.map-container h2 {
+  margin: 0;
   padding-top: 8px;
   padding-bottom: 3px;
+  font-size: 22px;
+}
+
+.map-container h3 {
+  margin: 0;
+  padding-top: 8px;
+  font-size: 18px;
+}
+
+.map-container span {
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
 }
 
 .map-brands {
-  padding-top: 22px;
+  padding-top: 5px;
   display: flex;
   flex-direction: row;
 }
 
-@media (max-width: 768px) {
-  .map-content {
-      flex-direction: row;
+@media (max-width: 1024px) {
+  .map-container {
+    flex-direction: row;
+    align-items: flex-start;
   }
 
-  
+  .map-flex {
+    display: flex;
+  }
+
   .footer-bottom {
-      flex-direction: row;
-      justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .map-container {
     position: relative;
-    top: -15px;
+    padding: 20px;
+    top: -40px;
+    left: 0;
+  }
+
+  .footer {
+    padding: 0px 20px;
   }
 
   .map-image {
-    width: 90%;
+    width: 100%;
+  }
+
+  .brands-container {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 1024px) {
-    .map-container {
-        flex-direction: row;
-        align-items: flex-start;
-        position: relative;
-        top: -15px;
-    }
-    
-    
-    .map-image {
-      width: 90%;
-    }
-    
-    .brands-container {
-        flex-direction: column;
-    }
+@media (max-width: 768px) {
+
 }
