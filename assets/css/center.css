@@ -75,7 +75,7 @@ section {
   background-color: #026a63;
   position: relative;
   /* right: -10vh; */
-  top: 15vh;
+  top: 12vh;
   /* border-radius: 50vh; */
   border-radius: 50vh 0 0 50vh;
   z-index: 1;
@@ -109,7 +109,7 @@ section {
   font-size: 0; 
 }
 
-.button-round.fixed::before {
+/* .button-round.fixed::before {
   content: "";
   background: url("../images/phone.png") no-repeat center/contain;
   display: block;
@@ -117,7 +117,8 @@ section {
   height: 80px;  
   margin: 0 auto;
   color: #fff;
-}
+  transition: none;
+} */
 
 .button-round:hover {
   background-color: #03877c;
