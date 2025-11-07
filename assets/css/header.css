@@ -108,8 +108,10 @@
   display: block;
   color: inherit;
   padding: 0 0.5em 0.5em;
+  transition: color 0.3s ease;
 }
 
+/* Линия под ссылкой */
 .page-header__menu a::after {
   content: "";
   position: absolute;
@@ -119,24 +121,28 @@
   background-color: var(--c-dark);
   right: 0;
   transition: width var(--time-animation-m) linear,
-              background-color var(--time-animation-m) linear;
-}
+              background-color var(--time-animation-m) linear,
+              left var(--time-animation-m) ease,
+              right var(--time-animation-m) ease,
+  }
 
-a.active::after {
-  width: 100%;
-  left: 0;
-}
 
-.page-header__menu a:hover,
-.page-header__menu a:focus {
+.page-header__menu a:hover{
   color: var(--c-normal);
 }
 
+.page-header__menu a:focus,
+.page-header__menu a.active {
+  color: var(--c-dark);
+}
+
 .page-header__menu a:hover::after,
-.page-header__menu a:focus::after {
+/* .page-header__menu a:focus::after, */
+.page-header__menu a.active::after {
   width: 100%;
   left: 0;
-  background-color: var(--c-normal);
+  right: auto;
+  background-color: var(--c-dark);
 }
 
 /* Тогглер */
