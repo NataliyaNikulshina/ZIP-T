@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/center.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
 </head>
 
 <body>
@@ -37,8 +38,14 @@
         <div class="nav-bar page-header js-header">
             <a class="js-menu-link active" href="#center" data-href="home"><img class="logo"
                     src="assets/images/zip-t-logo.png" alt="logo ZIP-T"></a>
-            <button class="page-header__toggler js-menu-toggler" type="button"
-                aria-label="Управление мобильным меню"><span>Меню</span></button>
+            <button class="hamburger hamburger--spin page-header__toggler js-menu-toggler" type="button"
+                aria-label="Управление мобильным меню">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <!-- <button class="page-header__toggler js-menu-toggler" type="button"
+                aria-label="Управление мобильным меню"><span>Меню</span></button> -->
             <nav class="page-header__nav">
                 <div class="page-header__menu js-menu" id="menu">
                     <ul>
@@ -71,7 +78,7 @@
                                 <img src="assets/images/engine.jpg" alt="Двигатель фото" class="small-img">
                             </div>
                             <div class="text-block">
-                                <button class="button-round">
+                                <button class="button-round" onclick="">
                                     <img src="./assets/images/phone.png" width="72px" height="72px" alt="Телефон" />
                                     <!-- <strong>ПОЗВОНИ</strong>и мы поможем  -->
                                 </button>
@@ -164,7 +171,7 @@
                 <section class="screen" id="left">Отзывы</section>
 
                 <section class="screen" id="bottom">
-                    <footer>
+                    <footer class="reveal">
                         <p>Внимание! Заезд только с внутренней стороны МКАД.</p>
                         <div class="map">
                             <img class="map-image" src="assets/images/map.png" alt="Как проехать">
@@ -212,6 +219,11 @@
                 </section>
             </div>
         </div>
+        <script>
+            document.querySelector('.hamburger').addEventListener('click', function() {
+              this.classList.toggle('is-active');
+            });
+          </script>
         <script src="assets/js/menuScroll.js"></script>
         <script src="assets/js/fixedButton.js"></script>
 </body>
