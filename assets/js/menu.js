@@ -25,30 +25,53 @@
 //   });
 // }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.js-header');
-    const menuToggler = document.querySelector('.js-menu-toggler');
-    const menuLinks = document.querySelectorAll('.js-menu-link');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const header = document.querySelector('.js-header');
+//     const menuToggler = document.querySelector('.js-menu-toggler');
+//     const menuLinks = document.querySelectorAll('.js-menu-link');
   
-    if (menuToggler) {
-      menuToggler.addEventListener('click', function () {
-        header.classList.toggle('page-header--menu-opened');
-        document.body.classList.toggle('menu-opened');
-      });
-    }
+//     if (menuToggler) {
+//       menuToggler.addEventListener('click', function () {
+//         header.classList.toggle('page-header--menu-opened');
+//         document.body.classList.toggle('menu-opened');
+//       });
+//     }
   
-    menuLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        menuLinks.forEach(link => link.classList.remove('active'));
-        this.classList.add('active');
+//     menuLinks.forEach(link => {
+//       link.addEventListener('click', function () {
+//         menuLinks.forEach(link => link.classList.remove('active'));
+//         this.classList.add('active');
   
-        if (window.innerWidth < 1025) {
-          header.classList.remove('page-header--menu-opened');
-          document.body.classList.remove('menu-opened');
-        }
-      });
-    });
-  });
+//         if (window.innerWidth < 1025) {
+//           header.classList.remove('page-header--menu-opened');
+//           document.body.classList.remove('menu-opened');
+//         }
+//       });
+//     });
+//   });
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const header = document.querySelector('.js-header');
+//   const menuToggler = document.querySelector('.js-menu-toggler');
+//   const menuLinks = document.querySelectorAll('.js-menu-link');
+
+//   if (menuToggler) {
+//     menuToggler.addEventListener('click', function () {
+//       header.classList.toggle('page-header--menu-opened');
+//       document.body.classList.toggle('menu-opened');
+//     });
+//   }
+
+//   menuLinks.forEach(link => {
+//     link.addEventListener('click', function () {
+//       // Убираем добавление .active — это теперь делает scroll-скрипт
+//       if (window.innerWidth < 1025) {
+//         header.classList.remove('page-header--menu-opened');
+//         document.body.classList.remove('menu-opened');
+//       }
+//     });
+//   });
+// });
   
 
-console.log(document.querySelectorAll('.js-menu-link'));
+// console.log(document.querySelectorAll('.js-menu-link'));
