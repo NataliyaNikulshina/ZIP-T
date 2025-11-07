@@ -1,0 +1,81 @@
+#left {
+    background: #f0f0f5;
+    /* padding: 100px 20px; */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .reviews-section {
+    max-width: 2000px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .reviews-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #222;
+  }
+  
+  .reviews-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .reviews-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;  /* горизонтальный скролл разрешён */
+    overflow-y: hidden; /* вертикальный скролл запрещён */
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch; /* для плавного скролла на мобильных */
+  }
+
+  .review-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    width: 300px;
+  }
+  
+  .review-author {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .carousel-btn {
+    background: #222;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .carousel-btn.prev {
+    left: -50px;
+  }
+  
+  .carousel-btn.next {
+    right: -50px;
+  }
+
+  .review-item {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    min-width: 300px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }  
