@@ -76,3 +76,23 @@ gsap.from(".brand-item", {
         start: "top 90%",
     }
 });
+
+function callPhone() {
+    window.location.href = "tel:+74959616375";
+}
+
+function callContact() {
+    const phone = "+74959616375";
+    const phoneDigits = phone.replace(/\D/g, '');
+
+    // Проверяем, мобильное ли устройство
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // На мобильном — открываем звонок
+        window.location.href = `tel:${phoneDigits}`;
+    } else {
+        // На ПК — открываем WhatsApp
+        window.open(`https://wa.me/${phoneDigits}`, "_blank");
+    }
+}
