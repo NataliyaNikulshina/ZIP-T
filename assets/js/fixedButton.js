@@ -77,12 +77,8 @@ gsap.from(".brand-item", {
     }
 });
 
-function callPhone() {
-    window.location.href = "tel:+74959616375";
-}
-
 function callContact() {
-    const phone = "+7(909) 955-21-21";
+    const phone = "8(909) 955-21-21";
     const phoneDigits = phone.replace(/\D/g, '');
 
     // // Проверяем, мобильное ли устройство
