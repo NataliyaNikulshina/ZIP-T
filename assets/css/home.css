@@ -16,7 +16,7 @@
 .left-img {
     width: 300px;
     border-radius: 50%;
-    border: 10px solid #026a63;
+    border: 10px solid var(--c-normal);
 }
 
 .small-img {
@@ -25,7 +25,7 @@
     left: 200px;
     width: 150px;
     border-radius: 50%;
-    border: 8px solid #f9b17a;
+    border: 8px solid var(--c-yellow);
 }
 
 .text-block {
@@ -33,7 +33,7 @@
 }
 
 /* .text-block button {
-    background-color: #026a63;
+    background-color: var(--c-normal);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -55,7 +55,7 @@
 
 .text-link{
     font-size: 16px;
-    color: #fff;
+    color: var(--c-white);
     line-height: 1.6;
     text-decoration: none;
     transition: all 0.1s linear;
@@ -64,7 +64,7 @@
 }
 
 .brands {
-    background-color: #026a63;
+    background-color: var(--c-normal);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,7 +85,7 @@
 .round {
     width: 350px;
     height: 600px;
-    background-color: #026a63;
+    background-color: var(--c-normal);
     position: relative;
     /* top: 168px;
     right: 0px; */
@@ -97,7 +97,7 @@
     width: 150px;
     height: 150px;
     border-radius: 100px;
-    background-color: #026a63;
+    background-color: var(--c-normal);
     color: white;
     border: none;
     font-size: 16px;
@@ -108,11 +108,11 @@
 }
 
 .button-round:hover {
-    background-color: #03877c;
+    background-color: var(--c-light);
   }
 
   footer {
-    background-color: #1c2a24;
+    background-color: var(--c-dark);
     color: white;
     font-family: sans-serif;
     padding: 30px 20px;
@@ -123,7 +123,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #026a63;
+    background-color: var(--c-normal);
     padding: 15px 20px ;
     border-radius: 0 50px 50px 0;
     margin-bottom: 30px;
@@ -159,7 +159,7 @@
   .footer-middle h4 {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #ffffff;
+    color: var(--c-white);
   }
   
   .footer-middle ul {

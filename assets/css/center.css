@@ -30,7 +30,7 @@ section {
   width: 35vmin;
   max-width: 300px;
   border-radius: 50%;
-  border: 1vmin solid #026a63;
+  border: 1vmin solid var(--c-normal);
 }
 
 .small-img {
@@ -40,7 +40,7 @@ section {
   width: 20vmin;
   max-width: 150px;
   border-radius: 50%;
-  border: 0.8vmin solid #f9b17a;
+  border: 0.8vmin solid var(--c-yellow);
 }
 
 .text-block {
@@ -50,7 +50,7 @@ section {
 }
 
 .brands {
-  background-color: #026a63;
+  background-color: var(--c-normal);
   display: flex;
   justify-content: start;
   align-items: center;
@@ -72,7 +72,7 @@ section {
 .round {
   width: 30vh;
   height: 60vh;
-  background-color: #026a63;
+  background-color: var(--c-normal);
   position: relative;
   /* right: -10vh; */
   top: 12vh;
@@ -81,48 +81,64 @@ section {
   z-index: 1;
 }
 
+
 .button-round {
-  width: 15vmin;
-  height: 15vmin;
-  min-width: 150px;
-  min-height: 150px;
+  width: 14vmin;
+  height: 14vmin;
+  min-width: 120px;
+  min-height: 120px;
   border-radius: 50%;
-  background-color: #026a63;
-  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at 30% 30%, var(--c-light), var(--c-normal));
   border: none;
-  font-size: 2vmin;
-  line-height: 1.5;
   cursor: pointer;
-  position: relative;
+
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.25),
+    inset 0 4px 6px rgba(255,255,255,0.3),
+    inset 0 -4px 6px rgba(0,0,0,0.2);
+
+  transition: all 0.35s ease;
   z-index: 999;
-  transition: all 0.6s ease-in-out;
-  transform: translate(0, 0) scale(1);
+  position: relative;
 }
 
+.button-round img {
+  width: 55%;
+  height: 55%;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.4));
+}
+
+/* Когда фиксирована */
 .button-round.fixed {
   position: fixed;
   bottom: 60px;
   right: 20px;
-  transform: scale(0.7);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 7px 15px rgba(0,0,0,0.3);
-  display: inline-block;
-  font-size: 0; 
+
+  transform: scale(0.8);
+  background: radial-gradient(circle at 30% 30%, var(--c-normal), var(--c-dark));
+
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.45),
+    inset 0 3px 5px rgba(255,255,255,0.25),
+    inset 0 -3px 5px rgba(0,0,0,0.3);
 }
 
-/* .button-round.fixed::before {
-  content: "";
-  background: url("../images/phone.png") no-repeat center/contain;
-  display: block;
-  width: 80px;   
-  height: 80px;  
-  margin: 0 auto;
-  color: #fff;
-  transition: none;
-} */
-
+/* Ховер */
 .button-round:hover {
-  background-color: #03877c;
-  transform: scale(0.9);
+  transform: scale(1.12) !important;
+}
+
+
+
+@media (max-width: 1300px) {
+  .intro {
+    padding: 150px 0 0 50px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -138,7 +154,7 @@ section {
 @media (max-width: 768px) {
   .intro {
     flex-direction: column;
-    padding: 200px 0 0 0;
+    padding: 250px 0 0 0;
   }
 
   .text-block {
@@ -157,7 +173,7 @@ section {
   }
 
   .button-round {
-    font-size: 14px;
+    margin-left: 30px;
   }
 
 }

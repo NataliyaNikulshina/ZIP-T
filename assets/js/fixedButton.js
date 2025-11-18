@@ -82,11 +82,16 @@ function callPhone() {
 }
 
 function callContact() {
-    const phone = "+74959616375";
+    const phone = "+7(909) 955-21-21";
     const phoneDigits = phone.replace(/\D/g, '');
 
-    // Проверяем, мобильное ли устройство
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    // // Проверяем, мобильное ли устройство
+    // const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isMobile =
+        // устройства с поддержкой Touch
+        ("ontouchstart" in window) ||
+        // iPadOS 13+ маскируется как Mac, но имеет более 1 touch-point
+        (navigator.maxTouchPoints > 1);
 
     if (isMobile) {
         // На мобильном — открываем звонок
@@ -96,3 +101,26 @@ function callContact() {
         window.open(`https://wa.me/${phoneDigits}`, "_blank");
     }
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".button-round");
+
+  // Появление кнопки
+  gsap.from(btn, {
+    opacity: 0,
+    scale: 0.3,
+    duration: 0.8,
+    ease: "back.out(1.6)"
+  });
+
+  // Пульсация
+//   gsap.to(btn, {
+//     scale: 1.05,
+//     duration: 1.6,
+//     ease: "power1.inOut",
+//     repeat: -1,
+//     yoyo: true
+//   });
+});

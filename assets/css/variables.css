@@ -2,9 +2,14 @@
     --c-light: #03877c;
     --c-normal: #026a63;
     --c-dark: #1c2a24;
+    /* --c-light: #A8CFFF;
+    --c-normal: #4DA8DA;
+    --c-dark: #0A3D62; */
     --c-text: #000;
     --c-white: #fff;
     --c-yellow: #f9b17a;
+    /* --c-yellow: #D3D8DE; */
+    
 
     --font: "Proxima Nova", "Arial", sans-serif;
     --font-alt: "Radical",  "Arial", sans-serif;

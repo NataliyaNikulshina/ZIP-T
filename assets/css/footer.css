@@ -1,5 +1,5 @@
 footer {
-  background-color: #1c2a24;
+  background-color: var(--c-dark);
   color: white;
   font-family: sans-serif;
   padding: 30px 20px;
@@ -11,7 +11,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #026a63;
+  background-color: var(--c-normal);
   padding: 15px 20px;
   border-radius: 0 50px 50px 0;
   margin-bottom: 30px;
@@ -38,7 +38,7 @@ footer {
 }
 
 .footer-middle {
-  background-color: #1c2a24;
+  background-color: var(--c-dark);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -53,7 +53,7 @@ footer {
 .footer-middle h4 {
   margin-bottom: 10px;
   font-size: 16px;
-  color: #ffffff;
+  color: var(--c-white);
 }
 
 .footer-middle ul {
@@ -68,7 +68,7 @@ footer {
 }
 
 .footer-bottom {
-  background-color: #1c2a24;
+  background-color: var(--c-dark);
   display: flex;
   justify-content: space-between;
   align-items: center;

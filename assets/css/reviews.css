@@ -48,8 +48,8 @@
   }
   
   .carousel-btn {
-    background: #222;
-    color: #fff;
+    background: var(--c-text);
+    color: var(--c-white);
     border: none;
     font-size: 1.5rem;
     padding: 10px 15px;

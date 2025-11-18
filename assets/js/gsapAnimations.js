@@ -82,3 +82,34 @@ gsap.fromTo(".circle-bg",
     });
   });
   
+
+      // --- Анимация появления хедера
+  document.addEventListener("DOMContentLoaded", () => {
+    // Анимация плашки слева
+    gsap.from(".top-bar-left", {
+        duration: 1.2,
+        x: -80,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    // Анимация ссылок (постепенно, одна за одной)
+    gsap.from(".top-bar-left .clickable-contact, .top-bar > span .clickable-contact", {
+        duration: 0.8,
+        opacity: 0,
+        y: -10,
+        stagger: 0.15,
+        delay: 0.3,
+        ease: "power2.out"
+    });
+
+    // Hover-анимация ссылок (микроэффект)
+    document.querySelectorAll(".clickable-contact").forEach(el => {
+        el.addEventListener("mouseenter", () => {
+            gsap.to(el, { scale: 1.05, duration: 0.2, ease: "power1.out" });
+        });
+        el.addEventListener("mouseleave", () => {
+            gsap.to(el, { scale: 1, duration: 0.2, ease: "power1.out" });
+        });
+    });
+});
