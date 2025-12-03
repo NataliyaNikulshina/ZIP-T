@@ -109,6 +109,7 @@ function callContact() {
     }
 }
 
+button.addEventListener("click", callContact);
 
 
 document.addEventListener("DOMContentLoaded", () => {
