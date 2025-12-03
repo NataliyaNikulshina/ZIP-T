@@ -94,5 +94,11 @@
 @media (max-width: 968px) {
   .service-section {
     flex-direction: column;
+    gap: 15px;
+  }
+
+  .circle-bg {
+    width: 40vh;
+    height: 40vh;
   }
 }
