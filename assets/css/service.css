@@ -56,8 +56,8 @@
   height: 90px;
   border-radius: 50%;
   box-sizing: border-box;
-  background: #f2b263;
-  border: 5px solid #004d4a;
+  background: var(--c-yellow);
+  border: 5px solid var(--c-dark);
   display: flex;
   justify-content: center;
   align-items: center;

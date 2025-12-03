@@ -35,8 +35,8 @@ section {
 
 .small-img {
   position: absolute;
-  bottom: -2vmin;
-  left: 15vmin;
+  bottom: 22vmin;
+  left: 20vmin;
   width: 20vmin;
   max-width: 150px;
   border-radius: 50%;
