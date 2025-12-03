@@ -15,7 +15,7 @@ section {
   justify-content: start;
   align-items: center;
   padding: 100px 0 0 50px;
-  background: white;
+  background: var(--c-background);
   position: relative;
   box-sizing: border-box;
   gap: 5vw; 
@@ -33,7 +33,7 @@ section {
   border-top: 5px solid var(--c-normal);
   border-right: 25px solid var(--c-normal);
   border-bottom: 5px solid var(--c-normal);
-  border-left: 2px solid var(--c-normal);
+  border-left: 0px solid var(--c-normal);
 }
 
 .small-img {
@@ -44,7 +44,7 @@ section {
   /* max-width: 150px; */
   border-radius: 50%;
   border-top: 5px solid var(--c-yellow);
-  border-right: 2px solid var(--c-yellow);
+  border-right: 0px solid var(--c-yellow);
   border-bottom: 5px solid var(--c-yellow);
   border-left: 18px solid var(--c-yellow);
 }
@@ -52,7 +52,24 @@ section {
 .text-block {
   flex: 1;
   z-index: 2;
-  font-size: 2.5vmin;
+  font-size: 24px;
+}
+
+.text-block h1{
+  font-family: "Bowler", sans-serif;
+  font-size: 36px;
+  margin-bottom: 0;
+}
+
+.text-block h2{
+  margin: 0;
+  font-family: "Mulish", sans-serif;
+  font-size: 24px;
+}
+
+.text-block p{
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
 }
 
 .brands {

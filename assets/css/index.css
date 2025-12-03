@@ -1,16 +1,15 @@
 html {
   margin: 0;
-  /* height: 100%; */
   height: auto;   
   overflow-x: hidden;
-  background: var(--c-white);
+  background: var(--c-background);
 }
 
 body {
-font-family: Arial, sans-serif;
+font-family: "Mulish", Arial, sans-serif;
 margin: 0;
 padding: 0;
-background: var(--c-white);
+background: var(--c-background);
 }
 
 .viewport {
@@ -34,4 +33,12 @@ background: var(--c-white);
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+}
+
+@font-face {
+  font-family: "Bowler";
+  src: url("../../fonts/Bowler.woff2") format("woff2"),
+       url("../../fonts/Bowler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }

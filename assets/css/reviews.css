@@ -70,7 +70,7 @@
   }
 
   .review-item {
-    background: white;
+    background: var(--c-background);
     border-radius: 16px;
     padding: 30px 20px;
     min-width: 300px;
