@@ -4,7 +4,7 @@ const intro = document.querySelector('.intro');
 window.addEventListener('scroll', () => {
   const rect = intro.getBoundingClientRect();
 
-if (rect.bottom < window.innerHeight / 2) {
+if (rect.bottom < window.innerHeight * (2/3)) {
     button.classList.add('fixed');  // "приклеиваем" с анимацией
   } else {
     button.classList.remove('fixed'); // возвращаем назад
@@ -113,10 +113,9 @@ button.addEventListener("click", callContact);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".button-round");
 
   // Появление кнопки
-  gsap.from(btn, {
+  gsap.from(button, {
     opacity: 0,
     scale: 0.3,
     duration: 0.8,
@@ -124,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Пульсация
-//   gsap.to(btn, {
+//   gsap.to(button, {
 //     scale: 1.05,
 //     duration: 1.6,
 //     ease: "power1.inOut",
