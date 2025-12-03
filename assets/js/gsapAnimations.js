@@ -68,6 +68,44 @@ gsap.fromTo(".circle-bg",
         ease: "back.out(1.7)"
       });
     });
+
+    // --- Сворачиваем текст в service-item
+document.querySelectorAll(".service-item").forEach(item => {
+  const p = item.querySelector("p");
+
+  // Если текста мало — кнопку не добавляем
+  if (!p) return;
+  if (p.scrollHeight <= 50) return;
+
+  // Добавляем класс collapsed
+  p.classList.add("collapsed");
+
+  // Создаем кнопку
+  const btn = document.createElement("div");
+  btn.className = "service-toggle";
+  btn.textContent = "Показать больше";
+
+  item.querySelector(".text").appendChild(btn);
+
+  // Обрабатываем клик
+  btn.addEventListener("click", () => {
+    if (p.classList.contains("collapsed")) {
+      p.classList.remove("collapsed");
+      p.style.maxHeight = p.scrollHeight + "px";
+      btn.textContent = "Скрыть";
+    } else {
+      p.classList.add("collapsed");
+      p.style.maxHeight = "40px";
+      btn.textContent = "Показать больше";
+    }
+  });
+});
+
+
+
+
+
+
   
     // --- Анимация появления футера
     gsap.from("footer", {

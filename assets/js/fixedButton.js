@@ -52,6 +52,17 @@ gsap.from(".text-block h1", {
     }
 });
 
+gsap.from(".text-block h2", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".text-block",
+        start: "top 90%",
+    }
+});
+
 gsap.from(".text-block p", {
     opacity: 0,
     y: 50,
