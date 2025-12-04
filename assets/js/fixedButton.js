@@ -88,28 +88,48 @@ gsap.from(".brand-item", {
     }
 });
 
-function callContact() {
-    const phone = "8(909) 955-21-21";
-    const phoneDigits = phone.replace(/\D/g, '');
 
-    // // Проверяем, мобильное ли устройство
+function callContact(event) {
+    event.preventDefault();
+    const phoneDigits = "89099552121";
+    // Определяем платформу
+    // const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    // const isAndroid = /Android/.test(navigator.userAgent);
+    // const isMobile = isIOS || isAndroid;
     // const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const isMobile =
         // устройства с поддержкой Touch
         ("ontouchstart" in window) ||
         // iPadOS 13+ маскируется как Mac, но имеет более 1 touch-point
         (navigator.maxTouchPoints > 1);
-
+    
     if (isMobile) {
-        // На мобильном — открываем звонок
+        // На мобильном - звоним
         window.location.href = `tel:${phoneDigits}`;
     } else {
-        // На ПК — открываем WhatsApp
+        // На ПК - WhatsApp
         window.open(`https://wa.me/${phoneDigits}`, "_blank");
     }
+    // const phoneDigits = phone.replace(/\D/g, '');
+
+    // // // Проверяем, мобильное ли устройство
+    // // const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    // const isMobile =
+    //     // устройства с поддержкой Touch
+    //     ("ontouchstart" in window) ||
+    //     // iPadOS 13+ маскируется как Mac, но имеет более 1 touch-point
+    //     (navigator.maxTouchPoints > 1);
+
+    // if (isMobile) {
+    //     // На мобильном — открываем звонок
+    //     window.location.href = `tel:${phoneDigits}`;
+    // } else {
+    //     // На ПК — открываем WhatsApp
+    //     window.open(`https://wa.me/${phoneDigits}`, "_blank");
+    // }
 }
 
-button.addEventListener("click", callContact);
+// button.addEventListener("click", callContact);
 
 
 document.addEventListener("DOMContentLoaded", () => {
