@@ -4,7 +4,7 @@ const intro = document.querySelector('.intro');
 window.addEventListener('scroll', () => {
   const rect = intro.getBoundingClientRect();
 
-if (rect.bottom < window.innerHeight * (4/5)) {
+if (rect.bottom < window.innerHeight * (2/3)) {
     button.classList.add('fixed');  // "приклеиваем" с анимацией
   } else {
     button.classList.remove('fixed'); // возвращаем назад

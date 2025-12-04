@@ -28,7 +28,7 @@
 }
 
 .left-img {
-  max-width: 400px;
+  max-width: 380px;
   border-radius: 50%;
   border-top: 5px solid var(--c-normal);
   border-right: 25px solid var(--c-normal);
@@ -39,7 +39,7 @@
 .small-img {
   position: absolute;
   bottom: 260px;
-  left: 250px;
+  left: 220px;
   width: 200px;
   /* max-width: 150px; */
   border-radius: 50%;
@@ -59,6 +59,7 @@
   font-family: "Bowler", sans-serif;
   font-size: 36px;
   margin-bottom: 0;
+  width: 550px;
 }
 
 .text-block h2{
@@ -85,6 +86,7 @@
   right: 0;
   width: 100%;
   margin-left: 400px;
+  z-index: 1;
 }
 
 .brand-item img {
@@ -162,16 +164,49 @@
 @media (max-width: 1300px) {
   .intro {
     padding: 150px 0 0 50px;
+    min-height: 550px;
+  }
+  .left-img {
+    max-width: 300px;
+  }
+  
+  .small-img {
+    bottom: 200px;
+    left: 200px;
+    width: 150px;
   }
 }
 
 @media (max-width: 1024px) {
-  .text-block {
-    font-size: 22px;
+  .text-block h1{
+    font-size: 24px;
+    width: 400px;
+  }
+  .text-block h2{
+    font-size: 18px;
+  }
+  .text-block p{
+    font-size: 14px;
+  }
+  .small-img {
+    left: 170px;
   }
 
   .brands {
     margin-left: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .text-block h1{
+    font-size: 18px;
+    width: 350px;
+  }
+  .text-block h2{
+    font-size: 16px;
+  }
+  .text-block p{
+    font-size: 14px;
   }
 }
 
