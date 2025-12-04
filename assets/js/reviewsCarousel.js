@@ -58,7 +58,7 @@ nextBtn.addEventListener("click", () => {
 if (carousel && reviewItems.length && window.innerWidth < 768) {
   ScrollTrigger.create({
     trigger: carousel,
-    start: "top 90%",
+    start: "top 100%",
     onEnter: () => {
       // Задержка 1 секунда перед анимацией
       setTimeout(() => {
