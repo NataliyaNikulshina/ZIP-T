@@ -136,6 +136,7 @@
   .circle-bg {
     width: 40vh;
     height: 40vh;
+    left: 0;
   }
 
   .service-item {
