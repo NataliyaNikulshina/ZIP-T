@@ -21,6 +21,13 @@
   justify-content: center;
 }
 
+.image{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .circle-bg {
   z-index: 1;
   width: 50vh;
@@ -121,7 +128,7 @@
   .service-section {
     flex-direction: column;
     gap: 15px;
-    padding: 5px;
+    padding: 20px;
   }
 
   .circle-bg {
