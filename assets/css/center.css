@@ -18,7 +18,7 @@
   background: var(--c-background);
   position: relative;
   box-sizing: border-box;
-  gap: 5vw; 
+  gap: 5vw;
 }
 
 .images {
@@ -55,20 +55,20 @@
   font-size: 24px;
 }
 
-.text-block h1{
+.text-block h1 {
   font-family: "Bowler", sans-serif;
   font-size: 36px;
   margin-bottom: 0;
   width: 550px;
 }
 
-.text-block h2{
+.text-block h2 {
   margin: 0;
   font-family: "Mulish", sans-serif;
   font-size: 24px;
 }
 
-.text-block p{
+.text-block p {
   font-family: "Mulish", sans-serif;
   font-size: 16px;
 }
@@ -78,6 +78,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  list-style: none;
   gap: 3vw;
   padding: 10px 0 10px 200px;
   border-radius: 70px 0 0 70px;
@@ -90,7 +91,7 @@
 }
 
 .brand-item img {
-  height: 10vmin;
+  height: 100px;
   max-height: 140px;
 }
 
@@ -106,7 +107,6 @@
   z-index: 1;
 }
 
-
 .button-round {
   width: 14vmin;
   height: 14vmin;
@@ -118,14 +118,17 @@
   justify-content: center;
   align-items: center;
 
-  background: radial-gradient(circle at 30% 30%, var(--c-light), var(--c-normal));
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--c-yellow),
+    var(--c-yellow)
+  );
   border: none;
   cursor: pointer;
 
-  box-shadow: 
-    0 10px 25px rgba(0,0,0,0.25),
-    inset 0 4px 6px rgba(255,255,255,0.3),
-    inset 0 -4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25),
+    inset 0 4px 6px rgba(255, 255, 255, 0.3),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.2);
 
   transition: all 0.35s ease;
   z-index: 2;
@@ -135,7 +138,7 @@
 .button-round img {
   width: 55%;
   height: 55%;
-  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.4));
   z-index: 2;
 }
 
@@ -147,19 +150,20 @@
   min-width: 80px;
   min-height: 80px;
   transform: scale(0.7);
-  background: radial-gradient(circle at 30% 30%, var(--c-normal), var(--c-dark));
-  box-shadow: 
-    0 15px 35px rgba(0,0,0,0.45),
-    inset 0 3px 5px rgba(255,255,255,0.25),
-    inset 0 -3px 5px rgba(0,0,0,0.3);
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--c-normal),
+    var(--c-dark)
+  );
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45),
+    inset 0 3px 5px rgba(255, 255, 255, 0.25),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Ховер */
 .button-round:hover {
   transform: scale(1.12) !important;
 }
-
-
 
 @media (max-width: 1300px) {
   .intro {
@@ -169,7 +173,7 @@
   .left-img {
     max-width: 300px;
   }
-  
+
   .small-img {
     bottom: 200px;
     left: 200px;
@@ -178,14 +182,14 @@
 }
 
 @media (max-width: 1024px) {
-  .text-block h1{
+  .text-block h1 {
     font-size: 24px;
     width: 400px;
   }
-  .text-block h2{
+  .text-block h2 {
     font-size: 18px;
   }
-  .text-block p{
+  .text-block p {
     font-size: 14px;
   }
   .small-img {
@@ -198,14 +202,14 @@
 }
 
 @media (max-width: 900px) {
-  .text-block h1{
+  .text-block h1 {
     font-size: 18px;
     width: 350px;
   }
-  .text-block h2{
+  .text-block h2 {
     font-size: 16px;
   }
-  .text-block p{
+  .text-block p {
     font-size: 14px;
   }
 }
@@ -213,10 +217,13 @@
 @media (max-width: 768px) {
   .intro {
     flex-direction: column;
-    padding: 250px 0 0 0;
+    padding: 250px 20px 0 20px;
   }
   .images {
-  align-self: center;
+    align-self: center;
+    width: 400px;
+    display: flex;
+    justify-content: center;
   }
   .text-block {
     font-size: 18px;
@@ -229,17 +236,28 @@
   .brands {
     margin-left: 0;
     border-radius: 0;
-    padding: 10px 0 10px 100px;
+    padding: 10px 0;
+    justify-content: center;
   }
   .button-round {
     margin-left: 30px;
+  }
+  .brand-item img {
+    height: 60px;
   }
   .left-img {
     max-width: 300px;
   }
   .small-img {
     max-width: 150px;
-    bottom: 180px;
-    left: 190px;
+    bottom: 200px;
+    left: 220px;
+    z-index: 1;
+  }
 }
+
+@media (max-width: 420px) {
+  .brand-item img {
+    height: 50px;
+  }
 }
