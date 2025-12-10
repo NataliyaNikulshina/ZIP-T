@@ -62,13 +62,13 @@ if (carousel && reviewItems.length && window.innerWidth < 768) {
     onEnter: () => {
       // Задержка 1 секунда перед анимацией
       setTimeout(() => {
-        const firstItems = reviewItems.slice(0, 3); // первые 3 элемента
+        const firstItems = reviewItems.slice(0, 3); // первые 6 элементов
         firstItems.forEach((item, i) => {
           gsap.fromTo(
             item,
             { x: 0 },
             {
-              x: -40,          // сдвиг вправо на 40px
+              x: -140,          // сдвиг вправо на 40px
               duration: 0.3,
               ease: "power1.out",
               yoyo: true,

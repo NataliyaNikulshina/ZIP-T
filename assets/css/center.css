@@ -14,7 +14,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 100px 0 0 50px;
+  padding: 120px 120px 0 120px;
   background: var(--c-background);
   position: relative;
   box-sizing: border-box;
@@ -24,16 +24,16 @@
 .images {
   position: relative;
   flex: 0 0 auto;
-  align-self: flex-end;
+  align-self: center;
 }
 
 .left-img {
   max-width: 380px;
   border-radius: 50%;
-  border-top: 5px solid var(--c-normal);
-  border-right: 25px solid var(--c-normal);
-  border-bottom: 5px solid var(--c-normal);
-  border-left: 0px solid var(--c-normal);
+  border-top: 5px solid var(--c-yellow);
+  border-right: 25px solid var(--c-yellow);
+  border-bottom: 5px solid var(--c-yellow);
+  border-left: 0px solid var(--c-yellow);
 }
 
 .small-img {
@@ -53,41 +53,54 @@
   flex: 1;
   z-index: 2;
   font-size: 24px;
+  width: calc(100% - 550px);;
 }
 
 .text-block h1 {
   font-family: "Bowler", sans-serif;
   font-size: 36px;
   margin-bottom: 0;
-  width: 550px;
+  /* width: 550px; */
 }
 
 .text-block h2 {
   margin: 0;
   font-family: "Mulish", sans-serif;
   font-size: 24px;
+  /* width: 550px; */
 }
 
 .text-block p {
   font-family: "Mulish", sans-serif;
   font-size: 16px;
+  /* width: 650px; */
+}
+
+.brands-and-phone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  padding: 0 120px 0 0;
+  height: 200px;
 }
 
 .brands {
   background-color: var(--c-normal);
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 3vw;
-  padding: 10px 0 10px 200px;
-  border-radius: 70px 0 0 70px;
+  gap: 30px;
+  padding: 10px 50px 10px 50px;
+  border-radius: 0 70px 70px 0;
   /* position: absolute; */
   bottom: 5vh;
   right: 0;
-  width: 100%;
-  margin-left: 400px;
+  max-width: 1980px;
+  width: calc(100% - 250px);
   z-index: 1;
+  order: 1;
 }
 
 .brand-item img {
@@ -95,24 +108,22 @@
   max-height: 140px;
 }
 
-.round {
+/* .round {
   width: 30vh;
   height: 60vh;
   background-color: var(--c-normal);
   position: relative;
-  /* right: -10vh; */
   top: 12vh;
-  /* border-radius: 50vh; */
   border-radius: 50vh 0 0 50vh;
   z-index: 1;
-}
+} */
 
 .button-round {
-  width: 14vmin;
-  height: 14vmin;
-  min-width: 120px;
-  min-height: 120px;
+  order: 2;
+  max-width: 150px;
+  min-height: 150px;
   border-radius: 50%;
+  box-sizing: border-box;
 
   display: flex;
   justify-content: center;
@@ -147,7 +158,7 @@
   position: fixed;
   bottom: 60px;
   right: 20px;
-  min-width: 80px;
+  max-width: 80px;
   min-height: 80px;
   transform: scale(0.7);
   background: radial-gradient(
@@ -166,6 +177,9 @@
 }
 
 @media (max-width: 1300px) {
+  .text-block {
+    width: calc(100% - 600px);
+  }
   .intro {
     padding: 150px 0 0 50px;
     min-height: 550px;
@@ -173,18 +187,78 @@
   .left-img {
     max-width: 300px;
   }
-
   .small-img {
     bottom: 200px;
     left: 200px;
     width: 150px;
+  }
+
+}
+
+/* Бегущая строка */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.marquee-content {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-item {
+  font-family: "Bowler", sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+  color: var(--c-white);
+  text-shadow: 
+                1px 1px 0 var(--c-dark),
+                -1px 1px 0 var(--c-dark),
+                1px -1px 0 var(--c-dark),
+                -1px -1px 0 var(--c-dark),
+                0 1px 0 var(--c-dark),
+                0 -1px 0 var(--c-dark),
+                1px 0 0 var(--c-dark),
+                -1px 0 0 var(--c-dark);
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  padding: 0 40px;
+  flex-shrink: 0;
+}
+
+/* Эффект градиента по краям
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+} */
+
+/* .marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #000, transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(90deg, transparent, #000);
+} */
+
+@media (max-width: 1166px) {
+  .brands-and-phone {
+    padding: 0 20px 0 0;
   }
 }
 
 @media (max-width: 1024px) {
   .text-block h1 {
     font-size: 24px;
-    width: 400px;
   }
   .text-block h2 {
     font-size: 18px;
@@ -195,16 +269,21 @@
   .small-img {
     left: 170px;
   }
-
   .brands {
-    margin-left: 200px;
+    gap: 10px;
+  }
+  .brand-item img {
+    height: 80px;
+    max-height: 100px;
   }
 }
 
 @media (max-width: 900px) {
+  .text-block {
+    width: calc(100% - 40px);
+  }
   .text-block h1 {
     font-size: 18px;
-    width: 350px;
   }
   .text-block h2 {
     font-size: 16px;
@@ -217,36 +296,73 @@
 @media (max-width: 768px) {
   .intro {
     flex-direction: column;
-    padding: 250px 20px 0 20px;
+    padding: 210px 0 0 0;
+    /* position: relative; */
   }
   .images {
     align-self: center;
-    width: 400px;
+    width: 100%;
     display: flex;
     justify-content: center;
+  }
+  .images::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
   }
   .text-block {
     font-size: 18px;
     padding-left: 10px;
     padding-right: 10px;
+    z-index: 2;
+    position: relative;
+    margin-top: -120px;
+  }
+  .text-block h1,
+  .text-block h2 {
+    color: #fff;
+  }
+  .text-block p {
+    z-index: 10; /* гарантированно выше */
+    margin-top: 48px;
+    z-index: 1; 
   }
   .round {
     display: none;
+  }
+  .brands-and-phone{
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+    padding: 0;
+    height: auto;
   }
   .brands {
     margin-left: 0;
     border-radius: 0;
     padding: 10px 0;
     justify-content: center;
+    width: 100%;
+    order: 2;
   }
   .button-round {
     margin-left: 30px;
+    order: 1;
   }
   .brand-item img {
     height: 60px;
   }
   .left-img {
-    max-width: 300px;
+    max-width: 768px;
+    border-radius: 0%;
+    border: 0;
+    border-bottom: 15px;
+    width: 100%;
   }
   .small-img {
     max-width: 150px;
