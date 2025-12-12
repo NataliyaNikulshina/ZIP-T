@@ -148,8 +148,9 @@ p {
 
 .map-brands {
   padding-top: 5px;
-  display: flex;
-  flex-direction: row;
+  max-width: 90px;
+  /* display: flex;
+  flex-direction: row; */
 }
 
 @media (max-width: 1024px) {
@@ -198,9 +199,9 @@ p {
     padding: 15px;
   }
 
-  .map-flex {
+  /* .map-flex {
     display: inline;
-  }
+  } */
 
   .footer-middle {
     flex-direction: column;
