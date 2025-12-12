@@ -25,7 +25,7 @@ footer {
 }
 
 .icon {
-  height: 14px;
+  height: 24px;
   padding: 5px 10px;
 }
 
@@ -185,7 +185,9 @@ p {
 }
 
 @media (max-width: 768px) {
-
+  .footer-bottom p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 512px) {
@@ -209,9 +211,18 @@ p {
   }
 
   .footer-bottom {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+    width: 200px;
+  }
+
+  .footer-logo {
+    width: 50px;
   }
 
   .map-container {
