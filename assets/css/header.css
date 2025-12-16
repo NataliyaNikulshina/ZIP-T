@@ -49,8 +49,10 @@
   text-decoration: none;
   margin-right: 15px;
   transition: color 0.3s ease;
-  display: inline-block;
   font-size: 2vmin;
+  display: inline-flex;
+  align-items: center; 
+  gap: 6px;
 }
 
 .clickable-contact:hover {
@@ -127,7 +129,6 @@
   background-color: var(--c-dark);
 }
 
-
 .page-header__toggler {
   display: none !important;
   padding: 0;
@@ -140,6 +141,44 @@
   z-index: 1;
 }
 
+.top-bar {
+  background-color: var(--c-normal);
+  color: white;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 0 120px 0 0;
+}
+
+.top-bar-left {
+  background-color: var(--c-dark);
+  color: white;
+  padding: 10px 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  gap: 24px;
+  font-family: Arial, sans-serif;
+
+  /* ВАЖНО: разрешаем перенос! */
+  flex-wrap: wrap;
+}
+
+.icon-top-bar{
+  width: 30px;
+  height: 30px;
+  align-items: center;
+}
+
+.clickable-contact {
+  white-space: nowrap;
+}
+
 /* Медиа-запросы */
 /* Для очень больших экранов */
 @media (min-width: 2000px) {
@@ -148,6 +187,25 @@
   }
   .page-header__menu li {
     margin-left: 40px;
+  }
+}
+
+/* ============ 1300px: лёгкая адаптация ============ */
+@media (max-width: 1300px) {
+  .top-bar-left {
+    padding: 10px 40px;
+    gap: 16px;
+  }
+}
+
+/* ============ 1100px: контакты переходят в две строки ============ */
+@media (max-width: 1100px) {
+  .top-bar-left {
+    justify-content: flex-start;
+  }
+
+  .clickable-contact {
+    white-space: normal; /* разрешаем перенос слов */
   }
 }
 
@@ -163,6 +221,10 @@
   }
   .intro {
     padding-left: 20px;
+  }
+  .icon-top-bar{
+    width: 20px;
+    height: 20px;
   }
   .page-header__toggler {
     display: block !important;
@@ -213,85 +275,30 @@
     /* margin: 0 0 8px; */
     font-size: 14px;
   }
-}
-
-
-.top-bar {
-  background-color: var(--c-normal);
-  color: white;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  padding: 0 120px 0 0;
-}
-
-.top-bar-left {
-  background-color: var(--c-dark);
-  color: white;
-  padding: 10px 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  gap: 24px;
-  font-family: Arial, sans-serif;
-
-  /* ВАЖНО: разрешаем перенос! */
-  flex-wrap: wrap;
-}
-
-.clickable-contact {
-  white-space: nowrap;
-}
-
-
-/* ============ 1300px: лёгкая адаптация ============ */
-@media (max-width: 1300px) {
-  .top-bar-left {
-      padding: 10px 40px;
-      gap: 16px;
+  .icon-top-bar{
+    width: 16px;
+    height: 16px;
   }
-}
-
-
-/* ============ 1100px: контакты переходят в две строки ============ */
-@media (max-width: 1100px) {
-  .top-bar-left {
-      justify-content: flex-start;
-  }
-
-  .clickable-contact {
-      white-space: normal; /* разрешаем перенос слов */
-  }
-}
-
-
-/* ============ 768px: мобильная версия ============ */
-@media (max-width: 768px) {
   .top-bar {
-      flex-direction: column;
-      padding: 5px;
-      gap: 4px;
+    flex-direction: column;
+    padding: 5px;
+    gap: 4px;
   }
-
   .top-bar-left {
-      flex-direction: column;
-      width: 80%;
-      border-radius: 50px;
-      padding: 12px;
-      gap: 5px;
+    flex-direction: column;
+    width: 80%;
+    border-radius: 50px;
+    padding: 12px;
+    gap: 5px;
   }
 
   .top-bar span {
-      width: 100%;
-      text-align: center;
+    width: 100%;
+    text-align: center;
   }
 
   .clickable-contact {
-      text-align: center;
+    text-align: center;
   }
 
   .logo {

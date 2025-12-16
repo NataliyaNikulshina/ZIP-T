@@ -29,6 +29,16 @@ footer {
   padding: 5px 10px;
 }
 
+.icon-contact{
+  height: 20px;
+}
+
+.footer-wrapper{
+  display: inline-flex;
+  align-items: start; 
+  gap: 6px;
+}
+
 .footer-top > div {
   display: flex;
   align-items: center;
@@ -87,7 +97,7 @@ footer {
 }
 
 .margin-left {
-  margin-left: 88px;
+  margin-left: 41px;
 }
 
 .map {
