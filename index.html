@@ -440,54 +440,6 @@
                 this.classList.toggle('is-active');
             });
         </script>
-        <script>
-            // Функция для определения мобильного устройства iOS/Android
-            function isMobileDevice() {
-                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            }
-
-            // Функция для инициализации ссылок после загрузки страницы
-            function initMapLinks() {
-                const mapLinks = document.querySelectorAll('.clickable-contact');
-
-                mapLinks.forEach(link => {
-                    // Берем адрес из текущего href или текста ссылки
-                    const originalHref = link.getAttribute('href') || '';
-                    const addressMatch = originalHref.match(/rtext=~(.+)/);
-                    const address = addressMatch ? encodeURIComponent(addressMatch[1]) : encodeURIComponent(link.textContent.trim());
-
-                    if (isMobileDevice()) {
-                        // Для iOS/Android: используем стандартную схему Яндекс.Карт
-                        // Параметр 'pt' задает точку назначения
-                        link.href = `yandexmaps://maps.yandex.ru/?pt=${address}&z=15`;
-
-                        // Добавляем обработчик клика с фолбэком
-                        link.addEventListener('click', function (e) {
-                            // Проверяем, открылось ли приложение (запускаем таймер)
-                            let appOpened = false;
-                            const timeout = setTimeout(function () {
-                                if (!appOpened) {
-                                    // Если приложение не открылось, перенаправляем в веб-версию
-                                    window.location.href = `https://yandex.ru/maps/?text=${address}`;
-                                }
-                            }, 500);
-
-                            // Сбрасываем таймер при возвращении на страницу
-                            window.addEventListener('pagehide', function () {
-                                appOpened = true;
-                                clearTimeout(timeout);
-                            });
-                        });
-                    } else {
-                        // Для десктопа: оставляем оригинальную веб-ссылку
-                        link.href = originalHref;
-                    }
-                });
-            }
-
-            // Запускаем инициализацию при полной загрузке DOM
-            document.addEventListener('DOMContentLoaded', initMapLinks);
-        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
         <script src="assets/js/gsapAnimations.js"></script>
