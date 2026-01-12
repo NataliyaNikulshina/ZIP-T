@@ -52,3 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateActiveLink);
   window.addEventListener('load', updateActiveLink);
 });
+
+
+document.querySelector('.hamburger').addEventListener('click', function () {
+  this.classList.toggle('is-active');
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+      document.querySelector('.hamburger').classList.remove('is-active');
+  });
+});
