@@ -123,12 +123,6 @@ footer {
   overflow: hidden;
 }
 
-#draggableMap {
-  position: absolute;
-  transition: transform 0.1s ease-out;
-  will-change: transform, left, top;
-}
-
 .img-container:active {
   cursor: grabbing;
 }
