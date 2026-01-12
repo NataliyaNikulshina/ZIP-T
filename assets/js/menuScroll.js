@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuToggler = document.querySelector('.js-menu-toggler');
   const menuLinks = document.querySelectorAll('.js-menu-link');
   const sections = document.querySelectorAll('section');
+  const hamburger = document.querySelector('.hamburger');
 
   // === Плавный скролл по клику ===
   menuLinks.forEach(link => {
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.innerWidth < 1025) {
         header.classList.remove('page-header--menu-opened');
         document.body.classList.remove('menu-opened');
+        hamburger.classList.remove('is-active');
       }
     });
   });
@@ -54,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.querySelector('.hamburger').addEventListener('click', function () {
+hamburger.addEventListener('click', function () {
   this.classList.toggle('is-active');
 });
 
-menuLinks.forEach(link => {
-  link.addEventListener('click', () => {
-      document.querySelector('.hamburger').classList.remove('is-active');
-  });
-});
+// menuLinks.forEach(link => {
+//   link.addEventListener('click', () => {
+//       document.querySelector('.hamburger').classList.remove('is-active');
+//   });
+// });
