@@ -55,13 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('load', updateActiveLink);
 });
 
-
-hamburger.addEventListener('click', function () {
+document.querySelector('.hamburger').addEventListener('click', function () {
   this.classList.toggle('is-active');
 });
-
-// menuLinks.forEach(link => {
-//   link.addEventListener('click', () => {
-//       document.querySelector('.hamburger').classList.remove('is-active');
-//   });
-// });
