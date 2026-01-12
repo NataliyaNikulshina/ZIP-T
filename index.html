@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="assets/css/faq.css">
     <link rel="stylesheet" href="assets/css/reviews.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap"> -->
 </head>
 
 <body>
@@ -40,6 +39,29 @@
                 <a class="clickable-contact"
                     href="https://maps.yandex.ru/?rtext=~Москва, ул. Рябиновая, дом 38Б, строение 5&rtt=auto"
                     target="_blank" rel="noopener">
+                    <img src="./assets/images/icon/icon-location.png" class="icon-top-bar" alt="location" />
+                    Москва, ул. Рябиновая, дом 38Б, стр.5
+                </a>
+                <a class="clickable-contact" href="https://yandex.ru/maps/?rtext=~Москва, Рябиновая 38Б&rtt=auto"
+                    target="_blank" rel="noopener">
+                    <img src="./assets/images/icon/icon-location.png" class="icon-top-bar" alt="location" />
+                    Москва, ул. Рябиновая, дом 38Б, стр.5
+                </a>
+                <a class="clickable-contact"
+                    href="https://yandex.ru/maps/?ll=37.744530,55.658215&mode=routes&rtext=~55.658215,37.744530&rtt=auto"
+                    target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/icon/icon-location.png" class="icon-top-bar" alt="location" />
+                    Москва, ул. Рябиновая, дом 38Б, стр.5
+                </a>
+                <a class="clickable-contact"
+                    href="https://yandex.ru/maps/?rtext=~%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%20%D0%A0%D1%8F%D0%B1%D0%B8%D0%BD%D0%BE%D0%B2%D0%B0%D1%8F%2C%20%D0%B4%D0%BE%D0%BC%2038%D0%91%2C%20%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5%205&rtt=auto"
+                    target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/icon/icon-location.png" class="icon-top-bar" alt="location" />
+                    Москва, ул. Рябиновая, дом 38Б, стр.5
+                </a>
+                <a class="clickable-contact"
+                    href="https://yandex.ru/maps/?rtext=~Москва, ул. Рябиновая, дом 38Б, строение 5&rtt=auto"
+                    target="_blank" rel="noopener noreferrer">
                     <img src="./assets/images/icon/icon-location.png" class="icon-top-bar" alt="location" />
                     Москва, ул. Рябиновая, дом 38Б, стр.5
                 </a>
@@ -446,35 +468,35 @@
             function isMobileDevice() {
                 return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             }
-        
+
             // Функция для инициализации ссылок после загрузки страницы
             function initMapLinks() {
                 const mapLinks = document.querySelectorAll('.clickable-contact');
-                
+
                 mapLinks.forEach(link => {
                     // Берем адрес из текущего href или текста ссылки
                     const originalHref = link.getAttribute('href') || '';
                     const addressMatch = originalHref.match(/rtext=~(.+)/);
                     const address = addressMatch ? encodeURIComponent(addressMatch[1]) : encodeURIComponent(link.textContent.trim());
-                    
+
                     if (isMobileDevice()) {
                         // Для iOS/Android: используем стандартную схему Яндекс.Карт
                         // Параметр 'pt' задает точку назначения
                         link.href = `yandexmaps://maps.yandex.ru/?pt=${address}&z=15`;
-                        
+
                         // Добавляем обработчик клика с фолбэком
-                        link.addEventListener('click', function(e) {
+                        link.addEventListener('click', function (e) {
                             // Проверяем, открылось ли приложение (запускаем таймер)
                             let appOpened = false;
-                            const timeout = setTimeout(function() {
+                            const timeout = setTimeout(function () {
                                 if (!appOpened) {
                                     // Если приложение не открылось, перенаправляем в веб-версию
                                     window.location.href = `https://yandex.ru/maps/?text=${address}`;
                                 }
                             }, 500);
-                            
+
                             // Сбрасываем таймер при возвращении на страницу
-                            window.addEventListener('pagehide', function() {
+                            window.addEventListener('pagehide', function () {
                                 appOpened = true;
                                 clearTimeout(timeout);
                             });
@@ -485,7 +507,7 @@
                     }
                 });
             }
-        
+
             // Запускаем инициализацию при полной загрузке DOM
             document.addEventListener('DOMContentLoaded', initMapLinks);
         </script>
